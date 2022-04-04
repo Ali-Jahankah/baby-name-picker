@@ -31,7 +31,31 @@ const Babies = () => {
                 {names
                   .sort((a, b) => a.name.localeCompare(b.name))
                   .map((item, index) => {
-                    return item.sex === "m" ? (
+                    if (item.sex === "m" && !favourites.includes(item.name)) {
+                      return (
+                        <span
+                          key={index}
+                          onClick={() => {
+                            if (!favourites.includes(item.name)) {
+                              setFavourites([...favourites, item.name]);
+                              setNames(
+                                names.filter((n) => n.name !== item.name)
+                              );
+                            }
+                          }}
+                        >
+                          {item.name}
+                        </span>
+                      );
+                    } else {
+                      return null;
+                    }
+                  })}
+              </td>
+              <td className="girls_column">
+                {names.map((item, index) => {
+                  if (item.sex === "f" && !favourites.includes(item.name)) {
+                    return (
                       <span
                         key={index}
                         onClick={() => {
@@ -43,24 +67,10 @@ const Babies = () => {
                       >
                         {item.name}
                       </span>
-                    ) : null;
-                  })}
-              </td>
-              <td className="girls_column">
-                {names.map((item, index) => {
-                  return item.sex === "f" ? (
-                    <span
-                      key={index}
-                      onClick={() => {
-                        if (!favourites.includes(item.name)) {
-                          setFavourites([...favourites, item.name]);
-                          setNames(names.filter((n) => n.name !== item.name));
-                        }
-                      }}
-                    >
-                      {item.name}
-                    </span>
-                  ) : null;
+                    );
+                  } else {
+                    return null;
+                  }
                 })}
               </td>
             </tr>
