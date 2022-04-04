@@ -1,0 +1,48 @@
+.babies_article {
+  margin-top: 2em;
+}
+.table {
+  width: 96%;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 1.2rem;
+  border-collapse: collapse;
+}
+.table thead {
+  background: black;
+  color: wheat;
+}
+.table thead td {
+  padding: 0.5em;
+}
+
+.boys_column {
+  padding-top: 0.5em;
+  background: rgb(58, 135, 250);
+}
+.girls_column {
+  background: pink;
+  padding-top: 1em;
+}
+.table span {
+  border: 1px solid black;
+  padding: 0.3em;
+  display: inline-block;
+  margin: 0.3em;
+}
+footer {
+  padding: 1em;
+  margin-top: 2em;
+  font-size: 1rem;
+  text-align: center;
+  background: linear-gradient(
+    rgba(0, 0, 255, 0.722),
+    rgba(255, 192, 203, 0.677)
+  );
+  font-weight: 700;
+}
+footer p,
+footer a {
+  color: black;
+  display: inline-block;
+}
