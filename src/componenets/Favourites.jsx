@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "../styles/fav.css";
 const Favourites = ({ favourites, setFavourites }) => {
   return (
